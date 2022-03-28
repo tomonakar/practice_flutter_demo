@@ -4,7 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/user.dart';
-import '../../domain/auth/i_auth_facade.dart';
+import '../../domain/auth/repository/i_auth_facade.dart';
 import '../../domain/auth/vo/email_address.dart';
 import '../../domain/auth/vo/password.dart';
 import './firebase_user_mapper.dart';

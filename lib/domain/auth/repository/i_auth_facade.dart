@@ -4,7 +4,7 @@ import 'package:flutter_samples/domain/auth/user.dart';
 import 'package:flutter_samples/domain/auth/vo/email_address.dart';
 import 'package:flutter_samples/domain/auth/vo/password.dart';
 
-import 'auth_failure.dart';
+import '../auth_failure.dart';
 
 abstract class IAuthFacade {
   Future<Option<User>> getSignedInUser();
