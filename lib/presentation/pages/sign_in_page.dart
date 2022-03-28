@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_samples/res/custom_colors.dart';
 import 'package:flutter_samples/utils/authentication.dart';
 
-import '../widgets/google_sign_in_button.dart';
+import '../google_sign_in_button.dart';
+import '../thema/custom_colors.dart';
 
-class SignInScreen extends StatefulWidget {
+class SignInPage extends StatefulWidget {
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  _SignInPageState createState() => _SignInPageState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

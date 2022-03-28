@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import '../res/custom_colors.dart';
+import 'package:flutter_samples/presentation/thema/custom_colors.dart';
 
 class AppBarTitle extends StatelessWidget {
   @override

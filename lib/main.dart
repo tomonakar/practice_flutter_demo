@@ -1,12 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_samples/presentation/pages/sign_in_page.dart';
 
-import 'screens/sign_in_screen.dart';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
 
-void main() {
-  runApp(MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         brightness: Brightness.dark,
       ),
-      home: SignInScreen(),
+      home: SignInPage(),
     );
   }
 }

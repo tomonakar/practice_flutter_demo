@@ -1,29 +1,29 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_samples/screens/sign_in_screen.dart';
+import 'package:flutter_samples/presentation/pages/sign_in_page.dart';
 
-import '../res/custom_colors.dart';
-import '../utils/authentication.dart';
-import '../widgets/app_bar_title.dart';
+import '../../utils/authentication.dart';
+import '../app_bar_title.dart';
+import '../thema/custom_colors.dart';
 
-class UserInfoScreen extends StatefulWidget {
-  const UserInfoScreen({Key? key, required User user})
+class UserInfoPage extends StatefulWidget {
+  const UserInfoPage({Key? key, required User user})
       : _user = user,
         super(key: key);
 
   final User _user;
 
   @override
-  _UserInfoScreenState createState() => _UserInfoScreenState();
+  _UserInfoScreenPage createState() => _UserInfoScreenPage();
 }
 
-class _UserInfoScreenState extends State<UserInfoScreen> {
+class _UserInfoScreenPage extends State<UserInfoPage> {
   late User _user;
   bool _isSigningOut = false;
 
   Route _routeToSignInScreen() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => SignInScreen(),
+      pageBuilder: (context, animation, secondaryAnimation) => SignInPage(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         var begin = const Offset(-1.0, 0.0);
         var end = Offset.zero;
@@ -170,3 +170,5 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
     );
   }
 }
+
+class SignInScreen {}
