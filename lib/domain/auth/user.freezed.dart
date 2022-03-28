@@ -19,12 +19,12 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {String uid = "",
-      String email = "",
-      String displayName = "",
-      String photoUrl = "",
-      String phoneNumber = "",
-      String providerId = ""}) {
+      {required String uid,
+      required String email,
+      required String displayName,
+      required String photoUrl,
+      required String phoneNumber,
+      required String providerId}) {
     return _User(
       uid: uid,
       email: email,
@@ -176,29 +176,23 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 class _$_User implements _User {
   const _$_User(
-      {this.uid = "",
-      this.email = "",
-      this.displayName = "",
-      this.photoUrl = "",
-      this.phoneNumber = "",
-      this.providerId = ""});
+      {required this.uid,
+      required this.email,
+      required this.displayName,
+      required this.photoUrl,
+      required this.phoneNumber,
+      required this.providerId});
 
-  @JsonKey()
   @override
   final String uid;
-  @JsonKey()
   @override
   final String email;
-  @JsonKey()
   @override
   final String displayName;
-  @JsonKey()
   @override
   final String photoUrl;
-  @JsonKey()
   @override
   final String phoneNumber;
-  @JsonKey()
   @override
   final String providerId;
 
@@ -241,12 +235,12 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {String uid,
-      String email,
-      String displayName,
-      String photoUrl,
-      String phoneNumber,
-      String providerId}) = _$_User;
+      {required String uid,
+      required String email,
+      required String displayName,
+      required String photoUrl,
+      required String phoneNumber,
+      required String providerId}) = _$_User;
 
   @override
   String get uid;
