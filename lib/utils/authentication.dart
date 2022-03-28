@@ -5,6 +5,7 @@ import 'package:flutter_samples/presentation/pages/user_info_page.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
+// TODO: Delete
 class Authentication {
   static SnackBar customSnackBar({required String content}) {
     return SnackBar(
