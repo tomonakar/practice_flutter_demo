@@ -13,12 +13,14 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^1.0.3
   freezed_annotation: ^1.1.0
-
+  dartz: ^0.10.1
   cupertino_icons: ^1.0.2
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.11
   google_sign_in: ^5.2.4
   firebase_auth_oauth_web: ^1.1.0
+  uuid: ^3.0.6
+  kt_dart: ^0.10.0
 
 dev_dependencies:
   flutter_test:
