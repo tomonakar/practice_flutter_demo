@@ -31,6 +31,19 @@ class TodoItem with _$TodoItem {
         createdAt: DateTime.now(),
       );
 
+  factory TodoItem.fromMap(Map<String, dynamic>? data, String documentId) {
+    if (data == null) {
+      throw StateError('todoItemId: $documentId のデータが存在しません');
+    }
+    return TodoItem(
+      id: TodoId(documentId),
+      title: Title(data['title']),
+      detail: Detail(data['detail']),
+      isDone: data['isDone'],
+      createdAt: DateTime.parse(data['createdAt']),
+    );
+  }
+
   TodoItem updateIsDone() {
     return copyWith(
       id: id,
