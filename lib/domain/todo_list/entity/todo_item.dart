@@ -1,6 +1,6 @@
-import 'package:flutter_samples/domain/todoItem/vo/detail.dart';
-import 'package:flutter_samples/domain/todoItem/vo/title.dart';
-import 'package:flutter_samples/domain/todoItem/vo/todo_id.dart';
+import 'package:flutter_samples/domain/todo_list/vo/detail.dart';
+import 'package:flutter_samples/domain/todo_list/vo/title.dart';
+import 'package:flutter_samples/domain/todo_list/vo/todo_id.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../common/date_time_converter.dart';

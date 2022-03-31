@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_samples/domain/todoItem/repository/i_todo_list_repository.dart';
+import 'package:flutter_samples/domain/todo_list/repository/i_todo_list_repository.dart';
 import 'package:flutter_samples/infra/repository/firestore_path.dart';
 import 'package:flutter_samples/infra/repository/firestore_service.dart';
 
-import '../../domain/todoItem/entity/todo_item.dart';
+import '../../domain/todo_list/entity/todo_item.dart';
 
 class TodoListRepository implements ITodoListRepository {
   final _db = FirebaseFirestore.instance;
