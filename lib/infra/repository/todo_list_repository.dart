@@ -6,9 +6,6 @@ import 'package:flutter_samples/infra/repository/firestore_service.dart';
 import '../../domain/todo_list/entity/todo_item.dart';
 
 class TodoListRepository implements ITodoListRepository {
-  final _db = FirebaseFirestore.instance;
-  late Stream<QuerySnapshot>? _stream;
-
   final _service = FirestoreService.instance;
 
   Stream<List<TodoItem>> todoItemStream() => _service.collectionStream(
