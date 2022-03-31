@@ -17,12 +17,11 @@ class FirestoreService {
   // Update
   Future<void> updateData({
     required String path,
-    required String id,
     required Map<String, dynamic> data,
   }) async {
-    final reference = FirebaseFirestore.instance.collection(path);
-    print('[updateData] $path/$id: $data');
-    await reference.doc(data['id']).update(data);
+    final reference = FirebaseFirestore.instance.doc(path);
+    print('[updateData] $path: $data');
+    await reference.update(data);
   }
 
 // Set
@@ -43,7 +42,7 @@ class FirestoreService {
     await reference.delete();
   }
 
-// Get collection
+// Get Stream collection
   Stream<List<T>> collectionStream<T>({
     required String path,
     required T Function(Map<String, dynamic>? data, String documentID) builder,
@@ -70,7 +69,7 @@ class FirestoreService {
     });
   }
 
-// Get document
+// Get stream document
   Stream<T> documentStream<T>({
     required String path,
     required T Function(Map<String, dynamic>? data, String documentID) builder,
@@ -80,5 +79,14 @@ class FirestoreService {
     final Stream<DocumentSnapshot<Map<String, dynamic>>> snapshots =
         reference.snapshots();
     return snapshots.map((snapshot) => builder(snapshot.data(), snapshot.id));
+  }
+
+  // Get document
+  Future<DocumentSnapshot<Map<String, dynamic>>> documentSnaptshot({
+    required String path,
+  }) async {
+    final reference = FirebaseFirestore.instance.doc(path);
+    final doc = await reference.get();
+    return doc;
   }
 }
