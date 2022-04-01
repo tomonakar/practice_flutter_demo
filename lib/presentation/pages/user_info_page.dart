@@ -2,8 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_samples/presentation/pages/sign_in_page.dart';
 
-import '../../utils/authentication.dart';
-import '../app_bar_title.dart';
 import '../thema/custom_colors.dart';
 
 class UserInfoPage extends StatefulWidget {
