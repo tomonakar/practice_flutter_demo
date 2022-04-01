@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_samples/presentation/pages/sign_in_page.dart';
+
+import 'presentation/pages/todo_list/todo_list_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         brightness: Brightness.dark,
       ),
-      home: SignInPage(),
+      // home: SignInPage(),
+      home: TodoListPage(),
     );
   }
 }
