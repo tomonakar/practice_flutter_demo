@@ -8,5 +8,5 @@ abstract class ITodoListUsecase {
   Future<void> updateIsDone({required TodoId todoId});
   Future<void> updateTodoItem({required TodoItem item});
   Future<void> deleteTodoItem({required TodoId todoId});
-  Future<void> createTodoItem();
+  Future<void> createTodoItem({required TodoItem item});
 }

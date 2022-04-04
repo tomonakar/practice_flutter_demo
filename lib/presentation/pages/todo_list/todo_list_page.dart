@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_samples/providers/todo_item_provider.dart';
 
-class TodoListPage extends ConsumerWidget {
+class TodoListPage extends HookConsumerWidget {
   const TodoListPage({Key? key}) : super(key: key);
 
   @override

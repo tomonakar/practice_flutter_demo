@@ -10,27 +10,33 @@ class TodoListUsecase implements ITodoListUsecase {
 
   final TodoListRepository _todoListRepository;
 
+  @override
   Stream<List<TodoItem>> getTodoList() => _todoListRepository.todoItemStream();
 
+  @override
   Future<TodoItem> findByTodoId({required TodoId todoId}) async {
     return await _todoListRepository.findById(id: todoId.value ?? '');
   }
 
+  @override
   Future<void> updateIsDone({required TodoId todoId}) async {
     final item = await _todoListRepository.findById(id: todoId.value ?? '');
     await _todoListRepository.update(item: item.updateIsDone());
   }
 
+  @override
   Future<void> updateTodoItem({required TodoItem item}) async {
     await _todoListRepository.update(item: item);
   }
 
+  @override
   Future<void> deleteTodoItem({required TodoId todoId}) async {
     final item = await _todoListRepository.findById(id: todoId.value ?? '');
     _todoListRepository.delete(item: item);
   }
 
-  Future<void> createTodoItem() async {
-    await _todoListRepository.create(item: TodoItem.initial());
+  @override
+  Future<void> createTodoItem({required TodoItem item}) async {
+    await _todoListRepository.create(item: TodoItem.initial(item: item));
   }
 }

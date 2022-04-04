@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_samples/providers/todo_item_provider.dart';
 
-class TodoDetailPage extends ConsumerWidget {
+class TodoDetailPage extends HookConsumerWidget {
   const TodoDetailPage({Key? key}) : super(key: key);
 
   get controller => null;
@@ -11,6 +12,12 @@ class TodoDetailPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(todoDetailViewModelProvider);
     final notifier = ref.read(todoDetailViewModelProvider.notifier);
+    final titleController = useTextEditingController(
+      text: notifier.isNew() ? "" : state.title.value,
+    );
+    final detailController = useTextEditingController(
+      text: notifier.isNew() ? "" : state.detail.value,
+    );
 
     return Scaffold(
         appBar: AppBar(
@@ -27,8 +34,7 @@ class TodoDetailPage extends ConsumerWidget {
                 onChanged: (title) {
                   notifier.changeTitle(title);
                 },
-                controller: TextEditingController(
-                    text: notifier.isNew() ? '' : state.title.value),
+                controller: titleController,
               ),
               const SizedBox(
                 height: 16,
@@ -41,8 +47,7 @@ class TodoDetailPage extends ConsumerWidget {
                 onChanged: (detail) {
                   notifier.changeDetail(detail);
                 },
-                controller: TextEditingController(
-                    text: notifier.isNew() ? '' : state.detail.value),
+                controller: detailController,
               ),
               const SizedBox(
                 height: 16,

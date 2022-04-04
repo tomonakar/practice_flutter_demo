@@ -82,7 +82,7 @@ class FirestoreService {
   }
 
   // Get document
-  Future<DocumentSnapshot<Map<String, dynamic>>> documentSnaptshot({
+  Future<DocumentSnapshot<Map<String, dynamic>>> documentSnapshot({
     required String path,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);

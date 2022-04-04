@@ -24,12 +24,24 @@ class TodoItem with _$TodoItem {
   factory TodoItem.fromJson(Map<String, dynamic> json) =>
       _$TodoItemFromJson(json);
 
-  factory TodoItem.initial() => TodoItem(
+  factory TodoItem.initial({TodoItem? item}) {
+    if (item == null) {
+      return TodoItem(
         id: const TodoId(null),
-        title: const Title(""),
-        detail: const Detail(""),
+        title: const Title(''),
+        detail: const Detail(''),
         createdAt: DateTime.now(),
+        isDone: false,
       );
+    }
+    return TodoItem(
+      id: item.id,
+      title: item.title,
+      detail: item.detail,
+      createdAt: DateTime.now(),
+      isDone: item.isDone,
+    );
+  }
 
   factory TodoItem.fromMap(Map<String, dynamic>? data, String documentId) {
     if (data == null) {
